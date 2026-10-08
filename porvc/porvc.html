@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para minha pequena 🤍</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            font-family: Georgia, serif;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #4b0a20 0%,
+                    #210711 45%,
+                    #080308 100%
+                );
+
+            color: white;
+
+        }
+
+
+        /* =========================================
+           FUNDO
+        ========================================= */
+
+        .fundo {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+        }
+
+
+        .coracao {
+
+            position: absolute;
+
+            bottom: -50px;
+
+            color: rgba(255, 150, 180, .35);
+
+            animation: subir linear infinite;
+
+        }
+
+
+        .coracao:nth-child(1) {
+            left: 8%;
+            font-size: 20px;
+            animation-duration: 9s;
+        }
+
+        .coracao:nth-child(2) {
+            left: 23%;
+            font-size: 14px;
+            animation-duration: 12s;
+        }
+
+        .coracao:nth-child(3) {
+            left: 42%;
+            font-size: 24px;
+            animation-duration: 10s;
+        }
+
+        .coracao:nth-child(4) {
+            left: 67%;
+            font-size: 18px;
+            animation-duration: 13s;
+        }
+
+        .coracao:nth-child(5) {
+            left: 85%;
+            font-size: 22px;
+            animation-duration: 11s;
+        }
+
+
+        @keyframes subir {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================================
+           CONTAINER
+        ========================================= */
+
+        .container {
+
+            position: relative;
+
+            z-index: 1;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding-top: 70px;
+
+            padding-bottom: 80px;
+
+        }
+
+
+        /* =========================================
+           TÍTULO
+        ========================================= */
+
+        .titulo {
+
+            text-align: center;
+
+            padding: 0 20px;
+
+            font-size:
+                clamp(26px, 5vw, 42px);
+
+            color: #ffd9e3;
+
+            text-shadow:
+                0 0 10px rgba(255, 100, 150, .7),
+                0 0 30px rgba(255, 50, 100, .4);
+
+            animation: aparecer 1.5s ease;
+
+        }
+
+
+        .subtitulo {
+
+            margin-top: 12px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            letter-spacing: 2px;
+
+            color: #e8b8c5;
+
+        }
+
+
+        /* =========================================
+           PRESENTE
+        ========================================= */
+
+        .presente {
+
+            position: relative;
+
+            width: 230px;
+
+            height: 270px;
+
+            margin-top: 65px;
+
+            cursor: pointer;
+
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+
+        }
+
+
+        /* =========================================
+           CAIXA
+        ========================================= */
+
+        .caixa {
+
+            position: absolute;
+
+            left: 20px;
+
+            bottom: 0;
+
+            width: 190px;
+
+            height: 120px;
+
+            border-radius: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #9d0035,
+                    #d51653,
+                    #9d0035
+                );
+
+            box-shadow:
+                0 18px 30px rgba(0,0,0,.5),
+                inset 0 0 20px rgba(255,255,255,.12);
+
+        }
+
+
+        /* =========================================
+           FAIXA
+        ========================================= */
+
+        .faixa {
+
+            position: absolute;
+
+            left: 81px;
+
+            top: 0;
+
+            width: 28px;
+
+            height: 100%;
+
+            background: #ffd25c;
+
+        }
+
+
+        /* =========================================
+           TAMPA
+        ========================================= */
+
+        .tampa {
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 105px;
+
+            width: 210px;
+
+            height: 45px;
+
+            border-radius: 6px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #c20d45,
+                    #ed2865,
+                    #c20d45
+                );
+
+            z-index: 5;
+
+            transform-origin: bottom center;
+
+            transition:
+                transform 1s ease,
+                top 1s ease;
+
+        }
+
+
+        .tampa::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 91px;
+
+            top: 0;
+
+            width: 28px;
+
+            height: 100%;
+
+            background: #ffd25c;
+
+        }
+
+
+        /* =========================================
+           LAÇO
+        ========================================= */
+
+        .laco {
+
+            position: absolute;
+
+            top: 76px;
+
+            left: 80px;
+
+            width: 50px;
+
+            height: 40px;
+
+            z-index: 10;
+
+            transition: 1s ease;
+
+        }
+
+
+        .laco::before,
+        .laco::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 34px;
+
+            height: 25px;
+
+            border: 8px solid #ffd25c;
+
+            border-radius: 50%;
+
+        }
+
+
+        .laco::before {
+
+            left: -5px;
+
+            transform: rotate(30deg);
+
+        }
+
+
+        .laco::after {
+
+            left: 18px;
+
+            transform: rotate(-30deg);
+
+        }
+
+
+        .laco-centro {
+
+            position: absolute;
+
+            width: 18px;
+
+            height: 18px;
+
+            background: #ffd25c;
+
+            border-radius: 50%;
+
+            left: 15px;
+
+            top: 10px;
+
+        }
+
+
+       /* =========================================
+   ROSAS — ATRÁS DA CAIXA
+========================================= */
+
+.rosas {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 75px;
+
+    width: 230px;
+
+    height: 190px;
+
+    transform: translateX(-50%);
+
+    /*
+       IMPORTANTE:
+       menor z-index que a caixa
+    */
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+.rosa {
+
+    position: absolute;
+
+    font-size: 48px;
+
+    opacity: 0;
+
+    transform:
+        translateY(80px)
+        scale(.2);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,50,100,.8)
+        );
+
+    transition:
+        transform 1s cubic-bezier(.2,1.5,.4,1),
+        opacity .6s ease;
+
+}
+
+
+/* posições das rosas */
+
+.rosa:nth-child(1) {
+    left: 90px;
+    bottom: 40px;
+}
+
+.rosa:nth-child(2) {
+    left: 45px;
+    bottom: 15px;
+}
+
+.rosa:nth-child(3) {
+    left: 140px;
+    bottom: 35px;
+}
+
+.rosa:nth-child(4) {
+    left: 10px;
+    bottom: 10px;
+}
+
+.rosa:nth-child(5) {
+    left: 170px;
+    bottom: 0;
+}
+
+
+/* =========================================
+   CAIXA — NA FRENTE DAS ROSAS
+========================================= */
+
+.caixa {
+
+    position: absolute;
+
+    left: 20px;
+
+    bottom: 0;
+
+    width: 190px;
+
+    height: 120px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9d0035,
+            #d51653,
+            #9d0035
+        );
+
+    /*
+       Caixa fica na frente
+    */
+    z-index: 3;
+
+    box-shadow:
+        0 18px 30px rgba(0,0,0,.5),
+        inset 0 0 20px rgba(255,255,255,.12);
+
+}
+
+
+        /* =========================================
+           CAIXA ABERTA
+        ========================================= */
+
+        .presente.aberto .tampa {
+
+            transform:
+                translateY(-75px)
+                rotateX(55deg);
+
+        }
+
+
+        .presente.aberto .laco {
+
+            transform:
+                translateY(-80px)
+                rotate(20deg);
+
+            opacity: 0;
+
+        }
+
+
+        .presente.aberto .rosa {
+
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .presente.aberto .rosa:nth-child(1) {
+            transition-delay: .3s;
+        }
+
+        .presente.aberto .rosa:nth-child(2) {
+            transition-delay: .5s;
+        }
+
+        .presente.aberto .rosa:nth-child(3) {
+            transition-delay: .7s;
+        }
+
+        .presente.aberto .rosa:nth-child(4) {
+            transition-delay: .9s;
+        }
+
+        .presente.aberto .rosa:nth-child(5) {
+            transition-delay: 1.1s;
+        }
+
+
+        /* =========================================
+           ESCONDER CAIXA
+        ========================================= */
+
+        .presente.sumir {
+
+            opacity: 0;
+
+            transform:
+                translateY(-40px)
+                scale(.7);
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================================
+           TEXTO "CLIQUE"
+        ========================================= */
+
+        .clique {
+
+            margin-top: -35px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+            color: #f3c4d1;
+
+            animation:
+                pulsar 1.8s infinite;
+
+            transition: opacity 1s;
+
+        }
+
+
+        .clique.esconder {
+
+            opacity: 0;
+
+        }
+
+
+        @keyframes pulsar {
+
+            0%, 100% {
+                opacity: .5;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================================
+           CARTA FECHADA
+        ========================================= */
+
+        .carta-container {
+
+            position: absolute;
+
+            top: 50%;
+
+            left: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(.5);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+
+            z-index: 20;
+
+        }
+
+
+        .carta-container.mostrar {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1);
+
+        }
+
+
+        /* =========================================
+           ENVELOPE
+        ========================================= */
+
+        .envelope {
+
+            position: relative;
+
+            width: 300px;
+
+            height: 210px;
+
+            background: #fff7ed;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.6);
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+        }
+
+
+        .envelope::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 0;
+
+            height: 0;
+
+            border-left:
+                150px solid transparent;
+
+            border-right:
+                150px solid transparent;
+
+            border-top:
+                110px solid #f5d7d9;
+
+            z-index: 3;
+
+            transform-origin: top;
+
+            transition:
+                transform 1s ease;
+
+        }
+
+
+        .envelope::after {
+
+            content: "🤍";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            font-size: 40px;
+
+            z-index: 5;
+
+            transition: .5s;
+
+        }
+
+
+        /* =========================================
+           ABRIR CARTA
+        ========================================= */
+
+        .carta-container.aberta
+        .envelope::before {
+
+            transform:
+                rotateX(180deg);
+
+            opacity: 0;
+
+        }
+
+
+        .carta-container.aberta
+        .envelope::after {
+
+            opacity: 0;
+
+        }
+
+
+        /* =========================================
+           PAPEL
+        ========================================= */
+
+        .papel {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%)
+                scale(.7);
+
+            width: 280px;
+
+            max-height: 180px;
+
+            padding: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fffaf4,
+                    #ffe9ed
+                );
+
+            color: #5b1730;
+
+            border-radius: 5px;
+
+            opacity: 0;
+
+            overflow-y: auto;
+
+            transition:
+                transform 1s ease,
+                opacity 1s ease;
+
+            z-index: 2;
+
+        }
+
+
+        .carta-container.aberta
+        .papel {
+
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1.05);
+
+        }
+
+
+        .papel h2 {
+
+            color: #a0003b;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+
+            text-align: center;
+
+        }
+
+
+        .papel p {
+
+            font-size: 15px;
+
+            line-height: 1.65;
+
+        }
+
+
+        .assinatura {
+
+            text-align: center;
+
+            margin-top: 18px;
+
+            font-size: 17px;
+
+            font-style: italic;
+
+            color: #9a3857;
+
+        }
+
+
+        /* =========================================
+           TEXTO ABAIXO DO ENVELOPE
+        ========================================= */
+
+        .clique-carta {
+
+            margin-top: 15px;
+
+            text-align: center;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            color: #efc2ce;
+
+            animation:
+                pulsar 1.8s infinite;
+
+        }
+
+
+        /* =========================================
+           ANIMAÇÃO
+        ========================================= */
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(-20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================================
+           CELULAR
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                padding-top: 50px;
+
+            }
+
+
+            .titulo {
+
+                font-size: 27px;
+
+            }
+
+
+            .presente {
+
+                margin-top: 45px;
+
+                transform: scale(.85);
+
+            }
+
+
+            .envelope {
+
+                width: 280px;
+
+                height: 200px;
+
+            }
+
+
+            .papel {
+
+                width: 260px;
+
+                max-height: 170px;
+
+            }
+
+
+            .papel p {
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         CORAÇÕES
+    ========================================= -->
+
+    <div class="fundo">
+
+        <div class="coracao">♥</div>
+        <div class="coracao">♥</div>
+        <div class="coracao">♥</div>
+        <div class="coracao">♥</div>
+        <div class="coracao">♥</div>
+
+    </div>
+
+
+
+    <main class="container">
+
+
+        <h1 class="titulo">
+
+            Um pequeno presente para você 🤍
+
+        </h1>
+
+
+        <div class="subtitulo">
+
+            Clique na caixinha...
+
+        </div>
+
+
+
+        <!-- =========================================
+             CAIXA
+        ========================================= -->
+
+        <div
+            class="presente"
+            id="presente"
+            onclick="abrirPresente()"
+        >
+
+
+            <!-- ROSAS -->
+
+            <div class="rosas">
+
+                <div class="rosa">🌹</div>
+
+                <div class="rosa">🌹</div>
+
+                <div class="rosa">🌹</div>
+
+                <div class="rosa">🌹</div>
+
+                <div class="rosa">🌹</div>
+
+            </div>
+
+
+            <!-- CORPO DA CAIXA -->
+
+            <div class="caixa">
+
+                <div class="faixa"></div>
+
+            </div>
+
+
+            <!-- TAMPA -->
+
+            <div class="tampa"></div>
+
+
+            <!-- LAÇO -->
+
+            <div class="laco">
+
+                <div class="laco-centro"></div>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="clique"
+            id="clique"
+        >
+
+            🎁 Clique no presente 🎁
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         CARTA / ENVELOPE
+    ========================================= -->
+
+    <div
+        class="carta-container"
+        id="cartaContainer"
+    >
+
+
+        <div
+            class="envelope"
+            onclick="abrirCarta()"
+        >
+
+
+            <div class="papel">
+
+
+                <h2>
+                    Para minha pequena 🤍
+                </h2>
+
+
+                <p>
+
+                    <strong>
+                        Dia 4 de julho, você apareceu.
+                    </strong>
+
+                    <br>
+
+                    <strong>
+                        Dia 8 de julho, você me prendeu.
+                    </strong>
+
+                    <br>
+
+                    <strong>
+                        E dia 12 de julho, você coloriu
+                        todos os meus dias dali em diante.
+                    </strong>
+
+                    <br><br>
+
+                    No dia 25 de setembro, você aceitou
+                    oficialmente fazer os meus dias ainda
+                    mais felizes.
+
+                    <br><br>
+
+                    Mas a verdade é que, desde o primeiro
+                    dia, eu já te amava. Eu só ainda não
+                    sabia como expressar tudo o que sentia.
+
+                    <br><br>
+
+                    Hoje, o que não me falta é vontade.
+                    Vontade de te amar, de cuidar de você,
+                    de aprender cada dia mais sobre nós e
+                    de mostrar, através das minhas atitudes,
+                    o quanto você é importante para mim.
+
+                    <br><br>
+
+                    Eu ainda estou aprendendo a te amar
+                    da melhor forma que posso, mas uma
+                    coisa eu prometo: vou sempre tentar
+                    ser melhor e provar isso todos os dias,
+                    permitindo que o nosso amor cresça
+                    junto com a gente.
+
+                </p>
+
+
+                <div class="assinatura">
+
+                    Eu amo você, minha pequena. 🤍
+
+                    <br><br>
+
+                    Com todo o meu amor ❤️
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="clique-carta">
+
+            💌 Clique na carta para abrir 💌
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================================
+           ABRIR PRESENTE
+        ========================================= */
+
+        function abrirPresente() {
+
+
+            const presente =
+                document.getElementById("presente");
+
+
+            const clique =
+                document.getElementById("clique");
+
+
+            /*
+                Evita clicar várias vezes
+            */
+
+            if (
+                presente.classList.contains("aberto")
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+                Abre a caixa
+            */
+
+            presente.classList.add("aberto");
+
+            clique.classList.add("esconder");
+
+
+            /*
+                Depois de 5 segundos,
+                a caixa desaparece.
+            */
+
+            setTimeout(() => {
+
+
+                presente.classList.add("sumir");
+
+
+                /*
+                    Pequeno intervalo para a
+                    caixa desaparecer antes
+                    da carta aparecer.
+                */
+
+                setTimeout(() => {
+
+
+                    const carta =
+                        document.getElementById(
+                            "cartaContainer"
+                        );
+
+
+                    carta.classList.add("mostrar");
+
+
+                }, 1000);
+
+
+            }, 5000);
+
+        }
+
+
+
+        /* =========================================
+           ABRIR CARTA
+        ========================================= */
+
+        function abrirCarta() {
+
+
+            const carta =
+                document.getElementById(
+                    "cartaContainer"
+                );
+
+
+            carta.classList.add("aberta");
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
